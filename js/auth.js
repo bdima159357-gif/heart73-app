@@ -1,102 +1,62 @@
-// =============================
-// Heart73 Authentication
-// =============================
+// ====================================
+// Сердце под защитой
+// Авторизация
+// ====================================
 
 const supabase = window.supabase.createClient(
     SUPABASE_URL,
     SUPABASE_KEY
 );
 
-// ----------------------------
-// Проверка сессии
-// ----------------------------
+document.addEventListener("DOMContentLoaded", () => {
 
-document.addEventListener("DOMContentLoaded", async () => {
+    const loginForm = document.getElementById("loginForm");
 
-    const { data } = await supabase.auth.getSession();
+    if(loginForm){
 
-    if (!data.session) return;
+        loginForm.addEventListener("submit", loginUser);
 
-    const page = location.pathname;
+    }
 
-    if (page.includes("login") || page.includes("register")) {
+    const register = document.getElementById("register");
 
-        location.href = "../patient/dashboard.html";
+    if(register){
+
+        register.addEventListener("click", function(e){
+
+            e.preventDefault();
+
+            location.href="register.html";
+
+        });
 
     }
 
 });
 
-// ----------------------------
-// Регистрация
-// ----------------------------
+async function loginUser(e){
 
-async function register(email,password){
+    e.preventDefault();
 
-    const {data,error} = await supabase.auth.signUp({
+    const email=document.getElementById("email").value;
 
-        email:email,
-        password:password
-
-    });
-
-    if(error){
-
-        alert(error.message);
-        return false;
-
-    }
-
-    alert("Аккаунт создан.\nПроверьте электронную почту.");
-
-    location.href="login.html";
-
-}
-
-// ----------------------------
-// Вход
-// ----------------------------
-
-async function login(email,password){
+    const password=document.getElementById("password").value;
 
     const {error}=await supabase.auth.signInWithPassword({
 
-        email:email,
-        password:password
+        email,
+        password
 
     });
 
     if(error){
 
         alert(error.message);
-        return false;
+
+        return;
 
     }
 
-    location.href="../patient/dashboard.html";
-
-}
-
-// ----------------------------
-// Выход
-// ----------------------------
-
-async function logout(){
-
-    await supabase.auth.signOut();
-
-    location.href="../login.html";
-
-}
-
-// ----------------------------
-// Пользователь
-// ----------------------------
-
-async function currentUser(){
-
-    const {data}=await supabase.auth.getUser();
-
-    return data.user;
+    location.href="patient.html";
 
 }
