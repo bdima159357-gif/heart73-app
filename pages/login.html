@@ -145,4 +145,34 @@ required>
 
 </body>
 
+<script>
+
+document
+.getElementById("loginForm")
+.addEventListener("submit",async function(e){
+
+e.preventDefault();
+
+await login(
+
+document.getElementById("email").value,
+
+document.getElementById("password").value
+
+);
+
+});
+
+document
+.getElementById("register")
+.addEventListener("click",function(e){
+
+e.preventDefault();
+
+location.href="register.html";
+
+});
+
+</script>    
+    
 </html>
