@@ -1,3 +1,3 @@
 const SUPABASE_URL = "https://sosjsdxqllnlhjwwrquy.supabase.co";
 
-const SUPABASE_KEY = "sb_secret_oeKwKleTAEAie0CRija0bQ_z9gt09KA";
+const SUPABASE_KEY = "sb_publishable_eCV7QAspLFZPCs_rriyNBQ_3l_E4bSd";
