@@ -3,17 +3,17 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Личный кабинет | Сердце под защитой</title>
+    <title>Личный кабинет | Сердце под защитой</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
@@ -23,37 +23,53 @@
 
 <header class="topbar">
 
-<div class="logo-area">
+    <div class="logo-area">
 
-<img src="../assets/images/logo.jpg">
+        <img src="../assets/images/logo.jpg" alt="Логотип">
 
-<div>
+        <div>
 
-<h2>Сердце под защитой</h2>
+            <h2>Сердце под защитой</h2>
 
-<span>Личный кабинет пациента</span>
+            <span>Личный кабинет пациента</span>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
-<div class="profile">
+    <div class="profile">
 
-<div class="avatar">
+        <div class="avatar" id="avatar">
 
-Д
+            👤
 
-</div>
+        </div>
 
-<div>
+        <div>
 
-<b>Дмитрий</b>
+            <strong id="patientName">
 
-<p>Пациент</p>
+                Загрузка...
 
-</div>
+            </strong>
 
-</div>
+            <br>
+
+            <small>
+
+                Пациент
+
+            </small>
+
+        </div>
+
+        <button id="logoutBtn" style="width:auto;padding:12px 22px;margin-left:20px;">
+
+            Выход
+
+        </button>
+
+    </div>
 
 </header>
 
@@ -63,7 +79,13 @@
 
 <h1>
 
-Здравствуйте, Дмитрий 👋
+Здравствуйте,
+<span id="welcomeName">
+
+Пациент
+
+</span>
+👋
 
 </h1>
 
@@ -71,8 +93,7 @@
 
 Добро пожаловать в личный кабинет.
 
-Здесь вы можете получить рекомендации специалиста,
-просматривать историю обращений и документы.
+Здесь вы можете получить рекомендации специалиста, заказать консультацию и просмотреть историю обращений.
 
 </p>
 
@@ -90,13 +111,15 @@
 
 <h2>
 
-Задать вопрос
+Чат со специалистом
 
 </h2>
 
 <p>
 
-Ответ специалиста в чате
+Задайте вопрос врачу.
+
+Ответ поступит в личный кабинет.
 
 </p>
 
@@ -106,9 +129,9 @@
 
 </h3>
 
-<button>
+<button id="chatBtn">
 
-Начать обращение
+Оплатить консультацию
 
 </button>
 
@@ -124,13 +147,13 @@
 
 <h2>
 
-Онлайн-встреча
+Видеоконсультация
 
 </h2>
 
 <p>
 
-Индивидуальная видеовстреча
+Онлайн-конференция с рекомендациями специалиста.
 
 </p>
 
@@ -140,9 +163,9 @@
 
 </h3>
 
-<button>
+<button id="videoBtn">
 
-Записаться
+Оплатить консультацию
 
 </button>
 
@@ -158,19 +181,21 @@
 
 </h2>
 
+<div id="historyList">
+
 <div class="history-item">
 
 <div>
 
-<b>
+<h3>
 
-Кардиолог
+Пока обращений нет
 
-</b>
+</h3>
 
 <p>
 
-Вопрос по повышенному давлению
+После оплаты консультации здесь появится история ваших обращений.
 
 </p>
 
@@ -178,35 +203,11 @@
 
 <span class="status waiting">
 
-Ожидает ответа
+Нет данных
 
 </span>
 
 </div>
-
-<div class="history-item">
-
-<div>
-
-<b>
-
-Кардиолог
-
-</b>
-
-<p>
-
-Расшифровка ЭКГ
-
-</p>
-
-</div>
-
-<span class="status success">
-
-Завершено
-
-</span>
 
 </div>
 
@@ -216,25 +217,49 @@
 
 <h2>
 
-Документы
+Медицинские заключения
 
 </h2>
 
+<div id="documentsList">
+
 <div class="doc">
 
-📄 Заключение специалиста.pdf
+<div>
 
-<button>
+<strong>
 
-Скачать
+Документы отсутствуют
+
+</strong>
+
+<br>
+
+<small>
+
+После консультации специалист сможет прикрепить рекомендации в ваш личный кабинет.
+
+</small>
+
+</div>
+
+<button disabled>
+
+Нет файлов
 
 </button>
+
+</div>
 
 </div>
 
 </section>
 
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../js/config.js"></script>
 
 <script src="../js/patient.js"></script>
 
