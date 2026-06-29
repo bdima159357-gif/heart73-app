@@ -2,6 +2,7 @@
 // Сердце под защитой
 // Авторизация Supabase
 // ======================================
+console.log("auth.js загружен");
 
 const supabase = window.supabase.createClient(
     SUPABASE_URL,
