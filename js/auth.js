@@ -1,6 +1,6 @@
 // ======================================
 // Сердце под защитой
-// Авторизация Supabase
+// Авторизация sb
 // ======================================
 
 const sb = window.supabase.createClient(
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const email = document.getElementById("email").value.trim();
             const password = document.getElementById("password").value;
 
-            const { error } = await supabase.auth.signInWithPassword({
+            const { error } = await sb.auth.signInWithPassword({
 
                 email,
                 password
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-            const { data, error } = await supabase.auth.signUp({
+            const { data, error } = await sb.auth.signUp({
 
                 email,
                 password
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (data.user) {
 
-                const { error: profileError } = await supabase
+                const { error: profileError } = await sb
                     .from("profiles")
                     .upsert({
 
