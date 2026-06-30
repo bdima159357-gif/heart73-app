@@ -23,11 +23,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // Загружаем профиль
-    const { data: profile } = await sb
-        .from("profiles")
-        .select("*")
-        .eq("id", session.user.id)
-        .single();
+    const { data, error } = await sb
+    .from("profiles")
+    .select("*")
+    .eq("id", session.user.id);
+
+console.log("Profile data:", data);
+console.log("Profile error:", error);
+
+const profile = data?.[0];
 
     if (profile) {
 
