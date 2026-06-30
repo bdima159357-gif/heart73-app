@@ -91,6 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     });
 
+console.log("Profile Error:", profileError);
+                
                 if (profileError) {
 
                     console.error(profileError);
