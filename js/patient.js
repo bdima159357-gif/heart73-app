@@ -50,13 +50,13 @@ const profile = data?.[0];
 // Загружаем консультации
 // ======================================
 
-const { data: consultations, error } = await sb
+const { data: consultations, error: consultationsError } = await sb
     .from("consultations")
     .select("*")
     .eq("patient_id", session.user.id)
     .order("created_at", { ascending: false });
 
-if (!error && consultations) {
+if (!consultationsError && consultations) {
 
     const history = document.getElementById("historyList");
 
