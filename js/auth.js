@@ -97,13 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
 
             }
-                if (profileError) {
-
-                    console.error(profileError);
-
-                }
-
-            }
 
             alert("Аккаунт успешно создан!");
 
