@@ -42,6 +42,73 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     }
 
+// ======================================
+// Загружаем консультации
+// ======================================
+
+const { data: consultations, error } = await sb
+    .from("consultations")
+    .select("*")
+    .eq("patient_id", session.user.id)
+    .order("created_at", { ascending: false });
+
+if (!error && consultations) {
+
+    const history = document.getElementById("historyList");
+
+    history.innerHTML = "";
+
+    if (consultations.length === 0) {
+
+        history.innerHTML = `
+            <div class="history-item">
+                <div>
+                    <h3>Пока обращений нет</h3>
+                    <p>После оплаты консультации она появится здесь.</p>
+                </div>
+
+                <span class="status waiting">
+                    Нет данных
+                </span>
+            </div>
+        `;
+
+    } else {
+
+        consultations.forEach(item => {
+
+            history.innerHTML += `
+
+            <div class="history-item">
+
+                <div>
+
+                    <h3>${item.consultation_type}</h3>
+
+                    <p>
+
+                        ${new Date(item.created_at).toLocaleString("ru-RU")}
+
+                    </p>
+
+                </div>
+
+                <span class="status ${item.status==="completed" ? "success" : "waiting"}">
+
+                    ${item.status}
+
+                </span>
+
+            </div>
+
+            `;
+
+        });
+
+    }
+
+}
+    
 });
 
 // ----------------------
