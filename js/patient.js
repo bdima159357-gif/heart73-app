@@ -8,6 +8,8 @@ const sb = window.supabase.createClient(
     SUPABASE_KEY
 );
 
+console.log("SB =", sb);
+
 document.addEventListener("DOMContentLoaded", async () => {
 
     // Проверяем авторизацию
