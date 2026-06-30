@@ -171,9 +171,7 @@ async function createConsultation(type, amount){
 
     }
 
-    alert("Консультация создана.");
-
-    location.reload();
+    location.href = "payment.html";
 
 }
 
