@@ -1,8 +1,9 @@
 // ======================================
 // Сердце под защитой
-// Авторизация sb
+// Авторизация
 // ======================================
 
+// Создаем клиент Supabase
 const sb = window.supabase.createClient(
     SUPABASE_URL,
     SUPABASE_KEY
@@ -10,7 +11,10 @@ const sb = window.supabase.createClient(
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ---------- ВХОД ----------
+    // ======================================
+    // ВХОД
+    // ======================================
+
     const loginForm = document.getElementById("loginForm");
 
     if (loginForm) {
@@ -42,7 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    // ---------- РЕГИСТРАЦИЯ ----------
+    // ======================================
+    // РЕГИСТРАЦИЯ
+    // ======================================
+
     const registerForm = document.getElementById("registerForm");
 
     if (registerForm) {
@@ -65,32 +72,36 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const { data, error } = await sb.auth.signUp({
-    email,
-    password,
-    options: {
-        data: {
-            full_name: name,
-            phone: phone,
-            role: "patient"
-        }
-    }
-});
 
+                email,
+                password
+
+            });
+
+            if (error) {
+
+                alert(error.message);
+                return;
+
+            }
+
+            // Если пользователь создан
             if (data.user) {
 
                 const { error: profileError } = await sb
                     .from("profiles")
-                    .upsert({
+                    .insert({
 
                         id: data.user.id,
+
                         full_name: name,
+
                         phone: phone,
+
                         role: "patient"
 
                     });
 
-console.log("Profile Error:", profileError);
-                
                 if (profileError) {
 
                     console.error(profileError);
@@ -107,7 +118,10 @@ console.log("Profile Error:", profileError);
 
     }
 
-    // ---------- КНОПКА РЕГИСТРАЦИИ ----------
+    // ======================================
+    // КНОПКА РЕГИСТРАЦИИ
+    // ======================================
+
     const registerLink = document.getElementById("register");
 
     if (registerLink) {
