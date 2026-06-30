@@ -131,22 +131,68 @@ document
 
 });
 
-// ----------------------
-// Пока заглушки
-// ----------------------
+
+// ======================================
+// Создание консультации
+// ======================================
+
+async function createConsultation(type, amount){
+
+    const {
+        data: { session }
+    } = await sb.auth.getSession();
+
+    if(!session){
+
+        location.href="login.html";
+        return;
+
+    }
+
+    const { error } = await sb
+        .from("consultations")
+        .insert({
+
+            patient_id: session.user.id,
+
+            consultation_type: type,
+
+            amount: amount,
+
+            status: "waiting_payment"
+
+        });
+
+    if(error){
+
+        console.error(error);
+        alert(error.message);
+        return;
+
+    }
+
+    alert("Консультация создана.");
+
+    location.reload();
+
+}
+
+// ---------------------------
 
 document
 .getElementById("chatBtn")
 .addEventListener("click",()=>{
 
-    alert("Следующий этап — подключение оплаты ЮKassa.");
+    createConsultation("Чат",500);
 
 });
+
+// ---------------------------
 
 document
 .getElementById("videoBtn")
 .addEventListener("click",()=>{
 
-    alert("Следующий этап — подключение оплаты ЮKassa.");
+    createConsultation("Видео",1000);
 
 });
