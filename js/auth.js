@@ -71,12 +71,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-            const { data, error } = await sb.auth.signUp({
+          const { data, error } = await sb.auth.signUp({
 
-                email,
-                password
+    email,
 
-            });
+    password,
+
+    options: {
+
+        data: {
+
+            full_name: name,
+
+            phone: phone
+
+        }
+
+    }
+
+});
 
             if (error) {
 
