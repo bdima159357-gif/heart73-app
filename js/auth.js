@@ -97,24 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
 
             }
-
-            // Если пользователь создан
-            if (data.user) {
-
-                const { error: profileError } = await sb
-                    .from("profiles")
-                    .insert({
-
-                        id: data.user.id,
-
-                        full_name: name,
-
-                        phone: phone,
-
-                        role: "patient"
-
-                    });
-
                 if (profileError) {
 
                     console.error(profileError);
