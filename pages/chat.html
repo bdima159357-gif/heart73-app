@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Чат консультации</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/patient.css">
+<link rel="stylesheet" href="../css/chat.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="container">
+
+<div class="logo-area">
+
+<img src="../assets/images/logo.jpg" alt="Heart73">
+
+<div>
+
+<h2>Сердце под защитой</h2>
+
+<span>Консультация врача</span>
+
+</div>
+
+</div>
+
+<div class="user">
+
+<button id="backButton">
+
+← Назад
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<main class="chat-container">
+
+<div class="chat-header">
+
+<h2>
+
+💬 Чат консультации
+
+</h2>
+
+<div id="chatStatus">
+
+Загрузка...
+
+</div>
+
+</div>
+
+<div id="messages">
+
+</div>
+
+<div class="send-panel">
+
+<div class="message-tools">
+
+<input
+type="file"
+id="fileInput"
+hidden>
+
+<button
+id="fileButton"
+type="button">
+
+📎 Файл
+
+</button>
+
+<span id="selectedFile">
+
+Файл не выбран
+
+</span>
+
+</div>
+
+<textarea
+id="messageInput"
+placeholder="Введите сообщение..."></textarea>
+
+<button
+id="sendButton">
+
+Отправить
+
+</button>
+
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../js/config.js"></script>
+
+<script src="../js/supabase.js"></script>
+
+<script src="../js/api.js"></script>
+
+<script>
+
+window.CHAT_ROLE = "patient";
+
+</script>
+
+<script src="../js/chat.js"></script>
+
+</body>
+
+</html>

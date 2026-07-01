@@ -1,0 +1,359 @@
+/* ==========================================
+   HEART73 • Patient Cabinet v2
+========================================== */
+
+body{
+    margin:0;
+    font-family:Inter,sans-serif;
+    background:#f5f7fb;
+    color:#1f2937;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    background:#fff;
+
+    border-bottom:1px solid #ececec;
+
+    box-shadow:0 6px 25px rgba(0,0,0,.05);
+
+}
+
+.header .container{
+
+    max-width:1400px;
+
+    margin:0 auto;
+
+    min-height:110px;      /* <-- вот это увеличивает шапку */
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 35px;        /* убираем лишние паддинги */
+
+}
+
+/* ================= MAIN ================= */
+
+.container{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:40px;
+
+}
+
+.welcome{
+
+    margin-bottom:35px;
+
+}
+
+.welcome h1{
+
+    text-align:left;
+
+    margin:0;
+
+    font-size:42px;
+
+}
+
+.welcome p{
+
+    color:#6b7280;
+
+    margin-top:12px;
+
+    font-size:18px;
+
+}
+
+/* ================= ACTIONS ================= */
+
+.actions{
+
+    display:flex;
+
+    gap:20px;
+
+    margin-bottom:45px;
+
+}
+
+.actions button{
+
+    flex:1;
+
+    height:62px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(135deg,#d61e1e,#ff5252);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.actions button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 30px rgba(214,30,30,.25);
+
+}
+
+/* ================= TITLES ================= */
+
+.consultations h2,
+.documents h2{
+
+    font-size:30px;
+
+    margin-bottom:25px;
+
+}
+
+/* ================= GRID ================= */
+
+#consultationsList{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(420px,1fr));
+
+    gap:25px;
+
+}
+
+/* ================= CARD ================= */
+
+.card{
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    border:1px solid #ececec;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.06);
+
+    transition:.25s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.10);
+
+}
+
+.card h3{
+
+    margin:0 0 25px;
+
+    font-size:28px;
+
+    color:#1f2937;
+
+}
+
+.card p{
+
+    margin:12px 0;
+
+    font-size:17px;
+
+}
+
+.card button{
+
+    margin-top:28px;
+
+    width:100%;
+
+    height:56px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:linear-gradient(135deg,#d61e1e,#ff5252);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.card button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* ================= STATUS ================= */
+
+.status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:8px 16px;
+
+    border-radius:40px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+}
+
+.waiting{
+
+    background:#fff7d8;
+
+    color:#b77900;
+
+}
+
+.success{
+
+    background:#dff8e7;
+
+    color:#008f45;
+
+}
+
+.error{
+
+    background:#ffe4e4;
+
+    color:#c62828;
+
+}
+
+/* ================= DOCUMENTS ================= */
+
+.documents{
+
+    margin-top:55px;
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    border:1px solid #ececec;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.06);
+
+}
+
+#documentsList{
+
+    margin-top:15px;
+
+    color:#666;
+
+}
+
+/* ================= LOADING ================= */
+
+.loading{
+
+    text-align:center;
+
+    padding:40px;
+
+    font-size:18px;
+
+    color:#666;
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+.header .container{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.logo-area{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.user{
+
+    flex-direction:column;
+
+}
+
+.container{
+
+    padding:20px;
+
+}
+
+.actions{
+
+    flex-direction:column;
+
+}
+
+#consultationsList{
+
+    grid-template-columns:1fr;
+
+}
+
+.welcome h1{
+
+    font-size:32px;
+
+}
+
+}

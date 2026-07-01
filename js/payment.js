@@ -1,7 +1,3 @@
-const sb = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-);
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -37,6 +33,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const consultation = data[0];
 
+console.log("CONSULTATION:", consultation);
+
     document.getElementById("paymentInfo").innerHTML = `
 
         <h2>${consultation.consultation_type}</h2>
@@ -51,14 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
 
-        const response = await fetch(
-            "http://localhost:3000/api/payment/create",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
+       const result = await api.createPayment({
 
     consultation_id: consultation.id,
 
@@ -69,10 +60,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     email: session.user.email
 
-})
-            }
-        );
-
+});
         const result = await response.json();
 
         console.log(result);

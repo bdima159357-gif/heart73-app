@@ -1,0 +1,315 @@
+/* ==========================================
+   HEART73 CHAT
+========================================== */
+
+.chat-container{
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+    background:#ffffff;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:calc(100vh - 190px);
+
+}
+
+.chat-header{
+
+    padding:25px 35px;
+
+    border-bottom:1px solid #ececec;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#ffffff;
+
+}
+
+.chat-header h2{
+
+    margin:0;
+
+    font-size:28px;
+
+}
+
+#chatStatus{
+
+    color:#6b7280;
+
+    font-size:15px;
+
+}
+
+#messages{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:35px;
+
+    background:#f5f7fb;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.message{
+
+    max-width:75%;
+
+    padding:16px 20px;
+
+    border-radius:18px;
+
+    line-height:1.6;
+
+    font-size:16px;
+
+    word-break:break-word;
+
+}
+
+.patient{
+
+    align-self:flex-end;
+
+    background:linear-gradient(135deg,#d61e1e,#ff5252);
+
+    color:#fff;
+
+    border-bottom-right-radius:6px;
+
+}
+
+.doctor{
+
+    align-self:flex-start;
+
+    background:#ffffff;
+
+    border:1px solid #ececec;
+
+    color:#1f2937;
+
+    border-bottom-left-radius:6px;
+
+}
+
+.message-time{
+
+    margin-top:10px;
+
+    font-size:12px;
+
+    opacity:.7;
+
+}
+
+.send-panel{
+
+    display:flex;
+
+    gap:20px;
+
+    padding:25px;
+
+    border-top:1px solid #ececec;
+
+    background:#ffffff;
+
+}
+
+#messageInput{
+
+    flex:1;
+
+    resize:none;
+
+    border:1px solid #d7dce3;
+
+    border-radius:16px;
+
+    padding:16px;
+
+    height:90px;
+
+    font-size:16px;
+
+    font-family:Inter,sans-serif;
+
+    outline:none;
+
+    transition:.2s;
+
+}
+
+#messageInput:focus{
+
+    border-color:#d61e1e;
+
+    box-shadow:0 0 0 3px rgba(214,30,30,.12);
+
+}
+
+#sendButton{
+
+    width:180px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:linear-gradient(135deg,#d61e1e,#ff5252);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+#backButton{
+
+    width:auto;
+
+    padding:0 25px;
+
+    height:46px;
+
+}
+
+@media(max-width:900px){
+
+.chat-container{
+
+    height:auto;
+
+    margin:20px;
+
+}
+
+.chat-header{
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.send-panel{
+
+    flex-direction:column;
+
+}
+
+#sendButton{
+
+    width:100%;
+
+    height:56px;
+
+}
+
+.message{
+
+    max-width:100%;
+
+}
+
+}
+.message-tools{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:15px;
+
+}
+
+#fileButton{
+
+    width:160px;
+
+    height:48px;
+
+}
+
+#selectedFile{
+
+    color:#666;
+
+    font-size:15px;
+
+}
+.message-image{
+
+    margin-top:15px;
+
+}
+
+.message-image img{
+
+    max-width:260px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+}
+
+.message-file{
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    background:#f5f7fb;
+
+}
+
+.message-file a{
+
+    text-decoration:none;
+
+    color:#d61e1e;
+
+    font-weight:600;
+
+}
+
+.message-file a:hover{
+
+    text-decoration:underline;
+
+}

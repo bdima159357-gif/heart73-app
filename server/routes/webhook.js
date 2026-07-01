@@ -10,6 +10,9 @@ const sb = createClient(
 
 router.post("/", async (req, res) => {
 
+console.log("=== WEBHOOK RECEIVED ===");
+console.dir(req.body, { depth: null });
+
     try {
 
         const event = req.body.event;
@@ -19,6 +22,9 @@ router.post("/", async (req, res) => {
         }
 
         const payment = req.body.object;
+
+console.log("Payment ID:", payment.id);
+console.log("Event:", event);
 
         // Обновляем платеж
         const { error: paymentError } = await sb

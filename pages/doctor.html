@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Кабинет врача</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/patient.css">
+<link rel="stylesheet" href="../css/doctor.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="container">
+
+        <div class="logo-area">
+
+            <img src="../assets/images/logo.jpg" alt="Heart73">
+
+            <div>
+
+                <h2>Сердце под защитой</h2>
+
+                <span>Рабочее место врача</span>
+
+            </div>
+
+        </div>
+
+        <div class="user">
+
+            <span id="doctorName">Загрузка...</span>
+
+            <button id="logoutButton">
+                Выйти
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+<div class="container">
+
+    <section class="welcome">
+
+        <h1>Кабинет врача 👨‍⚕️</h1>
+
+        <p>
+            Новые обращения пациентов, сообщения,
+            документы и видеоконсультации.
+        </p>
+
+    </section>
+
+    <section class="consultations">
+
+        <h2>Консультации</h2>
+
+        <div id="consultationsList" class="loading">
+
+            Загрузка...
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../js/config.js"></script>
+<script src="../js/supabase.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/doctor.js"></script>
+
+
+</body>
+</html>

@@ -3,17 +3,30 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
-    <title>Регистрация | Сердце под защитой</title>
+<meta charset="UTF-8">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Регистрация | Сердце под защитой</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="../css/register.css">
 
 </head>
 
@@ -25,13 +38,21 @@
 
 <div class="card">
 
-<img src="../assets/images/logo.jpg" class="logo" alt="Логотип">
+<img
+src="../assets/images/logo.jpg"
+class="logo"
+alt="Heart73">
 
-<h1>Создание аккаунта</h1>
+<h1>
+
+Создание аккаунта
+
+</h1>
 
 <p class="subtitle">
 
-Заполните данные для регистрации личного кабинета.
+На страже вашего здоровья.
+Создайте личный кабинет пациента.
 
 </p>
 
@@ -39,81 +60,130 @@
 
 <div class="input-group">
 
-<label>Имя и фамилия</label>
+<label>
+
+Имя и фамилия
+
+</label>
 
 <input
-type="text"
+
 id="name"
+
+type="text"
+
 placeholder="Иван Иванов"
+
 required>
 
 </div>
 
 <div class="input-group">
 
-<label>Телефон</label>
+<label>
+
+Телефон
+
+</label>
 
 <input
-type="tel"
-id="phone"
-placeholder="+7 (999) 123-45-67"
-required>
-
+    type="tel"
+    id="phone"
+    placeholder="+7 (999) 123-45-67"
+    oninput="formatPhone(this)"
+    required>
 </div>
 
 <div class="input-group">
 
-<label>Email</label>
+<label>
+
+Email
+
+</label>
 
 <input
-type="email"
+
 id="email"
+
+type="email"
+
 placeholder="example@mail.ru"
+
 required>
 
 </div>
 
 <div class="input-group">
 
-<label>Пароль</label>
+<label>
+
+Пароль
+
+</label>
 
 <input
-type="password"
+
 id="password"
+
+type="password"
+
 placeholder="Минимум 6 символов"
+
 required>
 
 </div>
 
 <div class="input-group">
 
-<label>Повторите пароль</label>
+<label>
+
+Повторите пароль
+
+</label>
 
 <input
-type="password"
+
 id="password2"
+
+type="password"
+
 placeholder="Повторите пароль"
+
 required>
 
 </div>
 
-<div style="margin:20px 0; display:flex; align-items:flex-start; gap:10px;">
+<div class="checkbox">
 
 <input
+
 type="checkbox"
+
 id="agree"
-required
-style="width:18px;height:18px;margin-top:3px;">
 
-<label for="agree" style="font-size:14px;line-height:1.5;color:#666;cursor:pointer;">
+required>
 
-Я принимаю условия обработки персональных данных.
+<label for="agree">
+
+Я принимаю условия обработки персональных данных
+и согласен с политикой конфиденциальности.
 
 </label>
 
 </div>
 
-<button type="submit">
+<div id="notify" class="notify"></div>
+
+<div class="cf-turnstile"
+     data-sitekey="0x4AAAAAADuE2nQg_9SOaVHl">
+</div>
+
+<button
+
+id="registerButton"
+
+type="submit">
 
 Создать аккаунт
 
@@ -131,41 +201,71 @@ style="width:18px;height:18px;margin-top:3px;">
 
 </div>
 
-<div class="divider"></div>
-
-<div class="advantages">
-
-<div class="adv">
-
-🔒
-
-<span>Данные надежно защищены</span>
-
-</div>
-
-<div class="adv">
-
-❤️
-
-<span>История обращений сохранится в кабинете</span>
-
-</div>
-
-<div class="adv">
-
-📄
-
-<span>Все рекомендации будут доступны онлайн</span>
-
-</div>
-
-</div>
+<hr class="divider">
 
 <div class="footer">
 
-© 2025
+<div>
 
-<b>Сердце под защитой</b>
+🔒
+
+<span>
+
+Данные надежно защищены
+
+</span>
+
+</div>
+
+<div>
+
+❤️
+
+<span>
+
+История обращений сохранится
+в личном кабинете
+
+</span>
+
+</div>
+<div>
+
+📄
+
+<span>
+
+Все рекомендации врача
+будут доступны онлайн
+
+</span>
+
+</div>
+
+<div>
+
+🩺
+
+<span>
+
+Консультации доступны
+из любой точки мира
+
+</span>
+
+</div>
+
+<div>
+
+© 2026
+
+<b>
+
+Сердце под защитой
+
+</b>
+
+</div>
 
 </div>
 
@@ -177,7 +277,7 @@ style="width:18px;height:18px;margin-top:3px;">
 
 <script src="../js/config.js"></script>
 
-<script src="../js/auth.js"></script>
+<script src="../js/register.js"></script>
 
 </body>
 
