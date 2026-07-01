@@ -1,3 +1,5 @@
+const webhookRoutes = require("./routes/webhook");
+
 require("dotenv").config();
 
 const express = require("express");
@@ -32,6 +34,8 @@ app.get("/api/test", (req, res) => {
 
 // Подключаем маршруты оплаты
 app.use("/api/payment", paymentRoutes);
+
+app.use("/api/webhook", webhookRoutes);
 
 // Запуск сервера
 const PORT = process.env.PORT || 3000;
