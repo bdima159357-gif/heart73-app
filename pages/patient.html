@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Личный кабинет | Сердце под защитой</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body class="dashboard">
+
+<div class="dashboard-bg"></div>
+
+<header class="topbar">
+
+    <div class="logo-area">
+
+        <img src="../assets/images/logo.jpg" alt="Логотип">
+
+        <div>
+
+            <h2>Сердце под защитой</h2>
+
+            <span>Личный кабинет пациента</span>
+
+        </div>
+
+    </div>
+
+    <div class="profile">
+
+        <div class="avatar" id="avatar">
+
+            👤
+
+        </div>
+
+        <div>
+
+            <strong id="patientName">
+
+                Загрузка...
+
+            </strong>
+
+            <br>
+
+            <small>
+
+                Пациент
+
+            </small>
+
+        </div>
+
+        <button id="logoutBtn" style="width:auto;padding:12px 22px;margin-left:20px;">
+
+            Выход
+
+        </button>
+
+    </div>
+
+</header>
+
+<main class="container">
+
+<section class="welcome">
+
+<h1>
+
+Здравствуйте,
+<span id="welcomeName">
+
+Пациент
+
+</span>
+👋
+
+</h1>
+
+<p>
+
+Добро пожаловать в личный кабинет.
+
+Здесь вы можете получить рекомендации специалиста, заказать консультацию и просмотреть историю обращений.
+
+</p>
+
+</section>
+
+<section class="cards">
+
+<div class="service">
+
+<div class="icon">
+
+💬
+
+</div>
+
+<h2>
+
+Чат со специалистом
+
+</h2>
+
+<p>
+
+Задайте вопрос врачу.
+
+Ответ поступит в личный кабинет.
+
+</p>
+
+<h3>
+
+500 ₽
+
+</h3>
+
+<button id="chatBtn">
+
+Оплатить консультацию
+
+</button>
+
+</div>
+
+<div class="service">
+
+<div class="icon">
+
+🎥
+
+</div>
+
+<h2>
+
+Видеоконсультация
+
+</h2>
+
+<p>
+
+Онлайн-конференция с рекомендациями специалиста.
+
+</p>
+
+<h3>
+
+1000 ₽
+
+</h3>
+
+<button id="videoBtn">
+
+Оплатить консультацию
+
+</button>
+
+</div>
+
+</section>
+
+<section class="history">
+
+<h2>
+
+История обращений
+
+</h2>
+
+<div id="historyList">
+
+<div class="history-item">
+
+<div>
+
+<h3>
+
+Пока обращений нет
+
+</h3>
+
+<p>
+
+После оплаты консультации здесь появится история ваших обращений.
+
+</p>
+
+</div>
+
+<span class="status waiting">
+
+Нет данных
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="documents">
+
+<h2>
+
+Медицинские заключения
+
+</h2>
+
+<div id="documentsList">
+
+<div class="doc">
+
+<div>
+
+<strong>
+
+Документы отсутствуют
+
+</strong>
+
+<br>
+
+<small>
+
+После консультации специалист сможет прикрепить рекомендации в ваш личный кабинет.
+
+</small>
+
+</div>
+
+<button disabled>
+
+Нет файлов
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../js/config.js"></script>
+
+<script src="../js/patient.js"></script>
+
+<script src="../js/app.js"></script>
+
+</body>
+
+</html>
